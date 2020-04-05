@@ -1,0 +1,44 @@
+<div class='dragdrop-container' [dragula]='"task-group"' id="New" [dragulaModel]='competitions'
+     *ngIf="competitions.length > 0">
+  <div *ngFor='let competition of competitions' [attr.task-id]="competition.name">
+    <div class="card">
+      <div class="card-body pt-3 text-left">
+        <div class="clearfix">
+          <h5 class="text-bold-500 primary float-left">{{competition.name}}</h5>
+          <div class="actions float-right" *ngIf="competition.status==='IN_PROGRESS'">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Pausar la competencia">
+              <i class='ft ft-pause cursor-pointer mr-2 success' (click)="pauseCompetition(competition)"></i>
+            </a>
+          </div>
+          <div class="actions float-right" *ngIf="competition.status==='IN_PROGRESS'">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Cancelar la competencia">
+              <i class='ft ft-stop-circle cursor-pointer mr-2 danger' (click)="cancelCompetition(competition)"></i>
+            </a>
+          </div>
+          <div class="actions float-right" *ngIf="competition.status==='TO_DO' || competition.status==='ON_HOLD'">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Lanzar la competencia">
+              <i class='ft ft-play cursor-pointer mr-2 danger' (click)="launchCompetition(competition)"></i>
+            </a>
+          </div>
+          <div class="actions float-right" *ngIf="competition.status==='DONE'">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Ver resultado">
+              <i class='ft-bar-chart mr-2 danger' (click)="showResults($event, competition)"></i>
+            </a>
+          </div>
+          <div class="actions float-right">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Consultar detalles">
+              <i class='ft-info mr-2 success' (click)="showDetails($event, competition)"></i>
+            </a>
+          </div>
+        </div>
+        <p>{{competition.comment}}</p>
+        <p>{{competition.user.firstName + ' ' + competition.user.lastName}}</p>
+        <img src="assets/img/portrait/avatars/avatar-11.png" class="rounded-circle width-50 mr-2"
+             *ngIf="competition.user.sex==='F'">
+        <img src="assets/img/portrait/avatars/avatar-03.png" class="rounded-circle width-50 mr-2"
+             *ngIf="competition.user.sex==='M'"> <span
+        class="primary">{{ competition.creationDate | date:'dd/MM/yyyy' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

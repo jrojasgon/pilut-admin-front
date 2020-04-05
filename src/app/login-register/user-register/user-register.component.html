@@ -1,0 +1,112 @@
+<!--Registration Page Starts-->
+<section id="registration">
+  <div class="container-fluid">
+    <div class="row full-height-vh m-0">
+      <div class="col-12 d-flex align-items-center justify-content-center">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body register-img">
+              <div class="row m-0">
+                <div class="col-lg-6 d-none d-lg-block py-2 px-3 text-center">
+                  <img
+                    src="../../../assets/img/gallery/register.png"
+                    alt=""
+                    class="img-fluid mt-3 pl-3"
+                    width="400"
+                    height="230"
+                  />
+                </div>
+                <div class="col-lg-6 col-md-12 pt-3 px-4 bg-white">
+                  <h4 class="card-title mb-2">Creacion de Cuenta</h4>
+                  <p class="card-text mb-3">
+                    Fill the below form to create a new account.
+                  </p>
+                  <form class="example-form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+                    <input
+                      type="text"
+                      class="form-control mb-3"
+                      placeholder="Nombres"
+                      required
+                      formControlName="firstName"
+                    />
+                    <input
+                      type="text"
+                      class="form-control mb-3"
+                      placeholder="Apellidos"
+                      required
+                      formControlName="lastName"
+                    />
+                    <div class="form-group row">
+                      <div class="col-md-12">
+                        <select class="form-control" id="sex" formControlName="sex" required>
+                          <option value="" disabled selected hidden>Sexo ...</option>
+                          <option [ngValue]="sex.id" *ngFor="let sex of sexes">{{sex.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <input
+                      type="email"
+                      class="form-control mb-3"
+                      placeholder="Email"
+                      required
+                      formControlName="email"
+                    />
+                    <input
+                      type="password"
+                      class="form-control mb-3"
+                      placeholder="Contraseña"
+                      required
+                      formControlName="password"
+                    />
+                    <input
+                      type="password"
+                      class="form-control mb-3"
+                      placeholder="Confirmar contraseña"
+                      required
+                      formControlName="confirmedPassword"
+                    />
+<!--                    <div-->
+<!--                      class="custom-control custom-checkbox custom-control-inline mb-3"-->
+<!--                    >-->
+<!--                      <input-->
+<!--                        type="checkbox"-->
+<!--                        id="customCheckboxInline1"-->
+<!--                        name="customCheckboxInline1"-->
+<!--                        class="custom-control-input"-->
+<!--                        checked-->
+<!--                      />-->
+<!--                      <label-->
+<!--                        class="custom-control-label"-->
+<!--                        for="customCheckboxInline1"-->
+<!--                      >-->
+<!--                        I accept the terms & conditions.-->
+<!--                      </label>-->
+<!--                    </div>-->
+                    <div class="fg-actions d-flex justify-content-between">
+                      <div class="login-btn">
+                        <button class="btn btn-outline-primary" type="button">
+                          <a href="login-page.html" class="text-decoration-none" [routerLink]="[ '/', 'login' ]"
+                             routerLinkActive="active">
+                            Regresar
+                          </a>
+                        </button>
+                      </div>
+                      <div class="recover-pass">
+                        <button class="btn btn-primary" type="submit">
+                          <a class="text-decoration-none text-white">
+                            Crear
+                          </a>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Registration Page Ends-->

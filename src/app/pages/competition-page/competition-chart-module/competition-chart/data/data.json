@@ -1,0 +1,209 @@
+{
+  "widgetLineChart": {
+    "labels": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "series": [
+      [
+        50,
+        45,
+        60,
+        55,
+        70,
+        55,
+        60,
+        55,
+        65,
+        57,
+        60,
+        53,
+        53
+      ]
+    ]
+  },
+  "barChartOptions": {
+    "scaleShowVerticalLines": false,
+    "responsive": true,
+    "maintainAspectRatio": false
+  },
+  "barChartLabels": [
+    "jul.-18",
+    "ago.-18",
+    "sept.-18",
+    "oct.-18",
+    "nov.-18",
+    "dic.-18",
+    "ene.-19",
+    "feb.-19",
+    "mar.-19",
+    "abr.-19",
+    "may.-19",
+    "jun.-19",
+    "jul.-19",
+    "ago.-19",
+    "sept.-19",
+    "oct.-19",
+    "nov.-19",
+    "dic.-19",
+    "ene.-20",
+    "feb.-20",
+    "mar.-20"
+  ],
+  "barChartType": {
+    "value": "bar"
+  },
+  "barChartLegend": {
+    "value": true
+  },
+  "barChartData": [
+    {
+      "data": [
+        834,
+        974,
+        794,
+        864,
+        1154,
+        964,
+        434,
+        484,
+        444,
+        384,
+        364,
+        354,
+        654,
+        514,
+        724,
+        964,
+        934,
+        1014,
+        864,
+        884,
+        1334
+      ],
+      "label": "Cartera A"
+    },
+    {
+      "data": [
+        362,
+        442,
+        319,
+        304,
+        374,
+        342,
+        202,
+        227,
+        209,
+        201,
+        175,
+        186,
+        277,
+        269,
+        279,
+        391,
+        354,
+        404,
+        353,
+        343,
+        534
+      ],
+      "label": "Cartera B"
+    }
+  ],
+  "barChartColors": [
+    {
+      "backgroundColor": "#5cb85c",
+      "borderColor": "rgba(148,159,177,1)",
+      "pointBackgroundColor": "rgba(148,159,177,1)",
+      "pointBorderColor": "#fff",
+      "pointHoverBackgroundColor": "#fff",
+      "pointHoverBorderColor": "rgba(148,159,177,0.8)"
+    },
+    {
+      "backgroundColor": "#FF8A97",
+      "borderColor": "rgba(148,159,177,1)",
+      "pointBackgroundColor": "rgba(148,159,177,1)",
+      "pointBorderColor": "#fff",
+      "pointHoverBackgroundColor": "#fff",
+      "pointHoverBorderColor": "rgba(148,159,177,0.8)"
+    }
+  ],
+  "radarChartLabels": [
+    "Estrategia 1",
+    "Estrategia 2",
+    "Estrategia 3",
+    "Estrategia 4",
+    "Estrategia 5",
+    "Estrategia 6",
+    "Estrategia 7"
+  ],
+  "radarChartData": [
+    {
+      "data": [
+        794,
+        964,
+        444,
+        354,
+        724,
+        1014,
+        1334
+      ],
+      "label": "Recaudo"
+    },
+    {
+      "data": [
+        533,
+        404,
+        342,
+        319,
+        279,
+        208,
+        186
+      ],
+      "label": "Costo"
+    }
+  ],
+  "radarChartType": "radar",
+  "radarChartColors": [
+    {
+      "backgroundColor": [
+        "rgba(215, 255, 255, 0.8)"
+      ]
+    },
+    {
+      "backgroundColor": [
+        "#FFEE58"
+      ]
+    }
+  ],
+  "radarChartOptions": {
+    "animation": false,
+    "responsive": true,
+    "maintainAspectRatio": false
+  },
+  "dashboardDonut": {
+    "series": [
+      {
+        "name": "done",
+        "className": "ct-done",
+        "value": 10
+      },
+      {
+        "name": "outstanding",
+        "className": "ct-outstanding",
+        "value": 3
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "barChartView": [
+    550,
+    600
+  ],
+  "barChartShowXAxis": true,
+  "barChartShowYAxis": true,
+  "barChartGradient": false,
+  "barChartShowLegend": false,
+  "barChartShowXAxisLabel": true,
+  "barChartXAxisLabel": "Cantidad",
+  "barChartShowYAxisLabel": true,
+  "barChartYAxisLabel": "Estado",
+  "barChartColorScheme": {
+    "domain": [
+      "#009DA0",
+      "#FF8D60",
+      "#FF586B",
+      "#AAAAAA"
+    ]
+  },
+  "pieChartShowLegend": false,
+  "pieChartColorScheme": {
+    "domain": [
+      "#009DA0",
+      "#FF8D60",
+      "#FF586B",
+      "#AAAAAA"
+    ]
+  },
+  "pieChartShowLabels": true,
+  "pieChartExplodeSlices": true,
+  "pieChartDoughnut": true,
+  "pieChartGradient": false,
+  "pieChart1ExplodeSlices": true,
+  "pieChart1Doughnut": false
+}

@@ -1,0 +1,43 @@
+<div>
+  <div class="modal-header">
+    <h4 class="modal-title text-primary font-large-1">Estados de la competencia: {{competition.name}}</h4>
+    <button type="button" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      x
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div id="horizontal-bar-chart" class="height-350">
+              <ngx-charts-bar-horizontal-2d [scheme]="barChartColorScheme" [results]="barChartMulti"
+                                            [gradient]="barChartGradient" [xAxis]="barChartShowXAxis"
+                                            [yAxis]="barChartShowYAxis" [legend]="barChartShowLegend"
+                                            [showXAxisLabel]="barChartShowXAxisLabel"
+                                            [showYAxisLabel]="barChartShowYAxisLabel"
+                                            [xAxisLabel]="barChartXAxisLabel" [yAxisLabel]="barChartYAxisLabel"
+              >
+              </ngx-charts-bar-horizontal-2d>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div id="pie-chart2" class="height-350">
+              <ngx-charts-pie-chart [scheme]="data.pieChartColorScheme" [results]="pieChartSingle"
+                                    [legend]="data.pieChartShowLegend" [explodeSlices]="data.pieChart1ExplodeSlices"
+                                    [labels]="data.pieChartShowLabels" [doughnut]="data.pieChart1Doughnut"
+                                    [gradient]="data.pieChartGradient">
+              </ngx-charts-pie-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

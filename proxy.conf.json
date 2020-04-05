@@ -1,0 +1,65 @@
+{
+  "/authenticate/*": {
+    "target": "http://localhost:9200/authenticate",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/authenticate": ""
+    }
+  },
+  "/logoutUser/*": {
+    "target": "http://localhost:9200/logoutUser",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/logoutUser": ""
+    }
+  },
+  "/registerUser/*": {
+    "target": "http://localhost:9200/registerUser",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/registerUser": ""
+    }
+  },
+  "/createCompetition/*": {
+    "target": "http://localhost:9200/createCompetition",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/createCompetition": ""
+    }
+  },
+  "/getCompetitionCriteria/*": {
+    "target": "http://localhost:9200/getCompetitionCriteria",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/getCompetitionCriteria": ""
+    }
+  },
+  "/getCompetitionsByStatus/*": {
+    "target": "http://localhost:9200/getCompetitionsByStatus",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/getCompetitionsByStatus": ""
+    }
+  },
+  "/updateCompetitionStatus/*": {
+    "target": "http://localhost:9200/updateCompetitionStatus",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/updateCompetitionStatus": ""
+    }
+  }
+}

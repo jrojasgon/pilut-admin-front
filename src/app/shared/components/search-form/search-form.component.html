@@ -1,0 +1,43 @@
+<div class="row text-left match-height">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="px-3">
+          <form class="form" [formGroup]="searchForm">
+            <div class="form-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <p class="pt-3">Desde:</p>
+                    <div class="input-group">
+                      <input id="from" class="form-control" placeholder="yyyy-mm-dd" name="dpFrom" ngbDatepicker
+                             #dFrom="ngbDatepicker" formControlName="fromDate">
+                      <div class="input-group-append">
+                        <div class="input-group-text" (click)="dFrom.toggle()">
+                          <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <p class="pt-3">Hasta:</p>
+                    <div class="input-group">
+                      <input id="to" class="form-control" placeholder="yyyy-mm-dd" name="dpTo" ngbDatepicker
+                             #dTo="ngbDatepicker" formControlName="toDate">
+                      <div class="input-group-append">
+                        <div class="input-group-text" (click)="dTo.toggle()">
+                          <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

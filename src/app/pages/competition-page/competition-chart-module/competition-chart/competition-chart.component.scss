@@ -1,0 +1,65 @@
+:host /deep/ .donut1 .ct-label {
+  text-anchor: middle;
+  alignment-baseline: middle;
+  font-size: 60px;
+  fill: #5bc0de;
+}
+
+:host /deep/ .donut1 .ct-outstanding .ct-slice-donut {
+  stroke: #eee;
+}
+
+:host /deep/ .donut1 .ct-done .ct-slice-donut {
+  stroke: #5bc0de;
+}
+
+:host /deep/ .donut2 .ct-label {
+  text-anchor: middle;
+  alignment-baseline: middle;
+  font-size: 60px;
+  fill: #128c7e;
+}
+
+:host /deep/ .donut2 .ct-outstanding .ct-slice-donut {
+  stroke: #eee;
+}
+
+:host /deep/ .donut2 .ct-done .ct-slice-donut {
+  stroke: #128c7e;
+}
+
+//Donut Chart 2 CSS Ends
+
+//Donut Chart 3 CSS Starts
+
+:host /deep/ .donut3 .ct-label {
+  text-anchor: middle;
+  alignment-baseline: middle;
+  font-size: 60px;
+  fill: #FF586B;
+}
+
+:host /deep/ .donut3 .ct-outstanding .ct-slice-donut {
+  stroke: #eee;
+}
+
+:host /deep/ .donut3 .ct-done .ct-slice-donut {
+  stroke: #FF586A;
+}
+
+//
+
+:host /deep/ .donut4 .ct-label {
+  text-anchor: middle;
+  alignment-baseline: middle;
+  font-size: 60px;
+  fill: #f0ad4e;
+}
+
+:host /deep/ .donut4 .ct-outstanding .ct-slice-donut {
+  stroke: #eee;
+}
+
+:host /deep/ .donut4 .ct-done .ct-slice-donut {
+  stroke: #f0ad4e;
+}

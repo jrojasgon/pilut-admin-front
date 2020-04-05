@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "pilut-admin-front": {
@@ -24,6 +24,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/sweetalert2/dist/sweetalert2.min.css",
+              "src/assets/css/wizard.css",
+              "src/assets/css/quill.snow.css",
+              "src/assets/css/quill.bubble.css",
+              "src/assets/css/hopscotch.css",
+              "node_modules/dragula/dist/dragula.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/@swimlane/ngx-datatable/index.css",
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+              "./src/assets/css/demo.css",
+              "./src/assets/sass/app.scss",
               "src/styles.css"
             ],
             "scripts": []

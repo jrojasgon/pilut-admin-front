@@ -1,0 +1,37 @@
+<div class="row mt-2">
+  <div class="col-6">
+    <div class="content-header text-left">Competencias</div>
+    <p class="content-sub-header"></p>
+  </div>
+</div>
+<app-search-form [searchForm]="searchForm" [dateSearch]="competitionDateSearch" (requestCompetition)="requestCompetitions()"></app-search-form>
+
+<section id="taskboard">
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-3 col-12">
+      <h4 class="ml-2 mt-2 text-bold-500 text-left"><i class="ft-list mr-1 float-left"></i>A realizar</h4>
+      <app-competition-list-detail [competitions]="todoCompetitions"
+                                   (updateCompetitions)="requestCompetitions()"></app-competition-list-detail>
+    </div>
+    <div class="col-md-3 col-12">
+      <h4 class="ml-2 mt-2 text-bold-500 text-left"><i class="ft-trending-up mr-1 float-left"></i>En curso</h4>
+      <app-competition-list-detail [competitions]="inProgressCompetition"
+                                   (updateCompetitions)="requestCompetitions()"></app-competition-list-detail>
+    </div>
+    <div class="col-md-3 col-12">
+      <h4 class="ml-2 mt-2 text-bold-500 text-left"><i class="ft-thumbs-up mr-1 float-left"></i>Terminadas</h4>
+      <app-competition-list-detail [competitions]="doneCompetitions"
+                                   (updateCompetitions)="requestCompetitions()"></app-competition-list-detail>
+    </div>
+    <div class="col-md-3 col-12">
+      <h4 class="ml-2 mt-2 text-bold-500 text-left"><i class="ft-alert-octagon mr-1 float-left"></i>En espera</h4>
+      <app-competition-list-detail [competitions]="onHoldCompetitions"
+                                   (updateCompetitions)="requestCompetitions()"></app-competition-list-detail>
+    </div>
+  </div>
+  <div class="row" *ngIf="loading">
+    <div class="col-md-3 col-12">
+      <app-loading [width]="100" [height]="100" [backgroundColor]="'transparent'"></app-loading>
+    </div>
+  </div>
+</section>

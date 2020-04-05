@@ -1,0 +1,225 @@
+<section>
+  <form class="form form-horizontal form-bordered" [formGroup]="criteriaForm"
+        (ngSubmit)="createCompetition()">
+    <input type="text" id="comCanal" class="form-control" formControlName="comCanal" required
+           *ngIf="showCanal"/>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-header">
+          <h4 class="form-section"><i class="ft-file-text"></i> Especificaciones</h4>
+        </div>
+        <div class="row text-left">
+          <div class="col-md-8">
+            <div class="form-body">
+              <div class="form-group row mr-2">
+                <label class="col-md-3 label-control text-capitalize" for="name">Nombre</label>
+                <div class="col-md-6">
+                  <input type="text" id="name" class="form-control" formControlName="name" required
+                         placeholder="Nombre"/>
+                </div>
+              </div>
+              <div class="form-group row mr-2">
+                <label class="col-md-3 label-control text-capitalize" for="debtAge">Edad de mora</label>
+                <div class="col-md-6">
+                  <select id="debtAge" name="interested" class="form-control" formControlName="debtAge" required>
+                    <option value="" disabled selected hidden>Escoja una opción...</option>
+                    <option [ngValue]="debtAge" *ngFor="let debtAge of debtAges">{{debtAge.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row mr-2">
+                <label class="col-md-3 label-control text-capitalize" for="capitalRange">Rango capital</label>
+                <div class="col-md-6">
+                  <select id="capitalRange" name="budget" class="form-control" formControlName="capitalRange"
+                          required>
+                    <option value="" disabled selected hidden>Escoja una opción...</option>
+                    <option [ngValue]="debtRange" *ngFor="let debtRange of debtRanges">{{debtRange.name}}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row mr-2">
+                <label class="col-md-3 label-control text-capitalize" for="age">Edad</label>
+                <div class="col-md-6">
+                  <select id="age" name="budget" class="form-control" formControlName="age" required>
+                    <option value="" disabled selected hidden>Escoja una opción...</option>
+                    <option [ngValue]="age" *ngFor="let age of ageRanges">{{age.name}}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row mr-2">
+                <label class="col-md-3 label-control text-capitalize" for="age">Ciudad</label>
+                <div class="col-md-6">
+                  <select id="city" name="budget" class="form-control" formControlName="city" required>
+                    <option value="" disabled selected hidden>Escoja una opción...</option>
+                    <option [ngValue]="city" *ngFor="let city of cities">{{city.name}}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row mr-2">
+                <label class="col-md-3 label-control text-capitalize" for="residentialZone">Zona Residencial</label>
+                <div class="col-md-6">
+                  <select id="residentialZone" name="residentialZone" class="form-control"
+                          formControlName="residentialZone" required>
+                    <option value="" disabled selected hidden>Escoja una opción...</option>
+                    <option [ngValue]="residentialZone"
+                            *ngFor="let residentialZone of residentialZones">{{residentialZone}}</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <div class="form-group row mr-2">
+                  <label class="col-md-3 label-control text-capitalize" for="canalMessage">Comentario</label>
+                  <div class="col-md-6">
+                            <textarea id="canalMessage" rows="5" class="form-control"
+                                      placeholder="Comentario ..." formControlName="comment" required></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card mr-4 ml-4">
+              <div class="card-content">
+                <div class="px-3 py-2">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-2 success">{{totalClients}}</h3>
+                      <span>Clientes totales</span>
+                    </div>
+                    <div class="align-self-center">
+                      <i class="icon-user success font-large-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mr-4 ml-4">
+              <div class="card-content">
+                <div class="px-3 py-2">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">{{competitionClients}}</h3>
+                      <span>Clientes en competencia</span>
+                    </div>
+                    <div class="align-self-center">
+                      <i class="icon-user success font-large-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mr-4 ml-4">
+              <div class="card-content">
+                <div class="px-3 py-2">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 success">{{selectedClients}}</h3>
+                      <span>Clientes seleccionados</span>
+                    </div>
+                    <div class="align-self-center">
+                      <i class="icon-user success font-large-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mr-4 ml-4">
+              <div class="card-content">
+                <div class="px-3 py-2">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">{{percentAccumulated}}</h3>
+                      <span>% Acumulado</span>
+                    </div>
+                    <div class="align-self-center">
+                      <i class="icon-pie-chart warning font-large-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mr-4 ml-4">
+              <div class="card-content">
+                <div class="px-3 py-2">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">{{percentInCompetition}}</h3>
+                      <span>% en competencia</span>
+                    </div>
+                    <div class="align-self-center">
+                      <i class="icon-pie-chart warning font-large-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mr-4 ml-4">
+              <div class="card-content">
+                <div class="px-3 py-2">
+                  <div class="media">
+                    <div class="media-body text-left">
+                      <h3 class="mb-1 warning">{{percentSelected}}</h3>
+                      <span>% seleccionado</span>
+                    </div>
+                    <div class="align-self-center">
+                      <i class="icon-pie-chart warning font-large-1"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+
+        <div class="card-header">
+          <h4 class="form-section"><i class="ft-mic"></i> Canales de comunicación</h4>
+        </div>
+        <div class="row text-left">
+          <div class="col-md-6">
+            <div class="card-body">
+              <ul class="list-group">
+                <li class="list-group-item cursor-pointer" (click)="whatsApp()"
+                    [ngStyle]="{'background-color': cardCanalStyleWhatsApp}">
+                  <span class="fa fa-whatsapp success font-medium-2 mr-2"></span> WhatsApp
+                </li>
+                <li class="list-group-item cursor-pointer" (click)="sms()"
+                    [ngStyle]="{'background-color': cardCanalStyleSMS}">
+                  <span class="fa ft-message-circle font-medium-2 danger mr-2"></span> SMS
+                </li>
+                <li class="list-group-item cursor-pointer" (click)="mail()"
+                    [ngStyle]="{'background-color': cardCanalStyleMail}">
+                  <span class="fa ft-mail info font-medium-2 mr-2"></span> Mail
+                </li>
+                <li class="list-group-item cursor-pointer" (click)="call()"
+                    [ngStyle]="{'background-color': cardCanalStyleCall}">
+                  <span class="fa ft-phone-call font-medium-2 mr-2"></span> Llamada
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+                            <textarea id="canalMessages" rows="9" class="form-control"
+                                      placeholder="Mensaje para el canal..." formControlName="message"
+                                      required></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="form-actions">
+        <div class="pull-right mr-3">
+          <button type="button" class="btn btn-raised btn-primary" type="submit"
+                  [disabled]="!criteriaForm.valid">
+            <i class="fa ft-award"></i> Crear competencia
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

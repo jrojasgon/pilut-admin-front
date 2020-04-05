@@ -1,0 +1,240 @@
+<div class="row text-left">
+  <div class="col-sm-12">
+    <div class="content-header">Indicadores de competencia</div>
+  </div>
+</div>
+<app-search-form [searchForm]="searchForm" [dateSearch]="competitionDateSearch"></app-search-form>
+<!--Statistics cards Starts-->
+<div class="row">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-blackberry">
+      <div class="card-content">
+        <div class="card-body pt-2 pb-0">
+          <div class="media">
+            <div class="media-body white text-left">
+              <h3 class="font-large-1 mb-0">$ 21.560.987</h3>
+              <span>Recaudo actual</span>
+            </div>
+            <div class="media-right white text-right">
+              <i class="icon-pie-chart font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
+          <x-chartist class="" [data]="widgetLineChart.data" [type]="widgetLineChart.type"
+                      [options]="widgetLineChart.options" [responsiveOptions]="widgetLineChart.responsiveOptions"
+                      [events]="widgetLineChart.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-ibiza-sunset">
+      <div class="card-content">
+        <div class="card-body pt-2 pb-0">
+          <div class="media">
+            <div class="media-body white text-left">
+              <h3 class="font-large-1 mb-0">$ 156.789.654</h3>
+              <span>Costos</span>
+            </div>
+            <div class="media-right white text-right">
+              <i class="icon-bulb font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
+          <x-chartist class="" [data]="widgetLineChart.data" [type]="widgetLineChart.type"
+                      [options]="widgetLineChart.options" [responsiveOptions]="widgetLineChart.responsiveOptions"
+                      [events]="widgetLineChart.events">
+          </x-chartist>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-green-tea">
+      <div class="card-content">
+        <div class="card-body pt-2 pb-0">
+          <div class="media">
+            <div class="media-body white text-left">
+              <h3 class="font-large-1 mb-0">$ 45.665.324</h3>
+              <span>Recaudo Prom</span>
+            </div>
+            <div class="media-right white text-right">
+              <i class="icon-graph font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
+          <x-chartist class="" [data]="widgetLineChart.data" [type]="widgetLineChart.type"
+                      [options]="widgetLineChart.options" [responsiveOptions]="widgetLineChart.responsiveOptions"
+                      [events]="widgetLineChart.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-pomegranate">
+      <div class="card-content">
+        <div class="card-body pt-2 pb-0">
+          <div class="media">
+            <div class="media-body white text-left">
+              <h3 class="font-large-1 mb-0">$ 869.578.098</h3>
+              <span>Total recaudo año</span>
+            </div>
+            <div class="media-right white text-right">
+              <i class="icon-wallet font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
+          <x-chartist class="" [data]="widgetLineChart.data" [type]="widgetLineChart.type"
+                      [options]="widgetLineChart.options" [responsiveOptions]="widgetLineChart.responsiveOptions"
+                      [events]="widgetLineChart.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row text-left">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Evolución del negocio</h4>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div class="height-400">
+            <canvas height="400" baseChart class="chart" [datasets]="lineChartData" [labels]="lineChartLabels"
+                    [options]="lineChartOptions" [colors]="lineChartColors"
+                    [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row text-left">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Recaudo por cartera</h4>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div id="bar-bar1" class="height-400">
+            <canvas baseChart class="chart" [datasets]="barChartData" [labels]="barChartLabels"
+                    [options]="barChartOptions" [colors]="barChartColors" [legend]="barChartLegend.value"
+                    [chartType]="barChartType.value"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row text-left">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Recaudo por estrategia</h4>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div id="radar-chart1" class="height-400">
+            <canvas baseChart class="chart" [datasets]="radarChartData" [labels]="radarChartLabels"
+                    [options]="radarChartOptions" [chartType]="radarChartType" [colors]="radarChartColors"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" matchHeight="card">
+  <div class="col-lg-3 col-md-12">
+    <div class="card">
+      <div class="card-header text-center pb-0">
+        <span class="font-medium-2 info">Llamadas</span>
+        <h3 class="font-large-2 mt-1">3261</h3>
+      </div>
+      <div class="card-content">
+        <div id="donut-chart1" class="height-250 donut1">
+          <x-chartist [data]="donutChart1.data" [type]="donutChart1.type" [options]="donutChart1.options"
+                      [responsiveOptions]="donutChart1.responsiveOptions" [events]="donutChart1.events">
+          </x-chartist>
+        </div>
+        <div class="card-body text-center">
+          <span class="font-large-1 d-block mb-1">50000</span>
+          <span class="info font-medium-1">Acumulado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-12">
+    <div class="card">
+      <div class="card-header text-center pb-0">
+        <span class="font-medium-2 primary">WhatsApp</span>
+        <h3 class="font-large-2 mt-1">7600
+<!--          <span class="font-medium-1 grey darken-1 text-bold-400">mensajes</span>-->
+        </h3>
+      </div>
+      <div class="card-content">
+        <div id="donut-chart2" class="height-250 donut2">
+          <x-chartist [data]="donutChart2.data" [type]="donutChart2.type" [options]="donutChart2.options"
+                      [responsiveOptions]="donutChart2.responsiveOptions" [events]="donutChart2.events">
+          </x-chartist>
+        </div>
+        <div class="card-body text-center">
+          <span class="font-large-1 d-block mb-1">10000</span>
+          <span class="primary font-medium-1">Acumulado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-12">
+    <div class="card">
+      <div class="card-header text-center pb-0">
+        <span class="font-medium-2 danger">SMS</span>
+        <h3 class="font-large-2 mt-1">4025
+<!--          <span class="font-medium-1 grey darken-1 text-bold-400">kcal</span>-->
+        </h3>
+      </div>
+      <div class="card-content">
+        <div id="donut-chart3" class="height-250 donut3">
+          <x-chartist [data]="donutChart3.data" [type]="donutChart3.type" [options]="donutChart3.options"
+                      [responsiveOptions]="donutChart3.responsiveOptions" [events]="donutChart3.events">
+          </x-chartist>
+        </div>
+        <div class="card-body text-center">
+          <span class="font-large-1 d-block mb-1">70000</span>
+          <span class="danger font-medium-1">Acumulado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-12">
+    <div class="card">
+      <div class="card-header text-center pb-0">
+        <span class="font-medium-2 warning">Mail</span>
+        <h3 class="font-large-2 mt-1">8025
+<!--          <span class="font-medium-1 grey darken-1 text-bold-400">kcal</span>-->
+        </h3>
+      </div>
+      <div class="card-content">
+        <div id="donut-chart4" class="height-250 donut4">
+          <x-chartist [data]="donutChart4.data" [type]="donutChart4.type" [options]="donutChart4.options"
+                      [responsiveOptions]="donutChart4.responsiveOptions" [events]="donutChart4.events">
+          </x-chartist>
+        </div>
+        <div class="card-body text-center">
+          <span class="font-large-1 d-block mb-1">90000</span>
+          <span class="warning font-medium-1">Acumulado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
